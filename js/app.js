@@ -1,31 +1,36 @@
-var n1 = prompt("Enter first number");
-var n2 = prompt("Enter second number");
-
-function add_numbers(a, b) {
-    var first = parseInt(a);
-    var second = parseInt(b);
-    return 5 * (first + second);
-}
-console.log(add_numbers(n1, n2));
-
-let x = 10;
-if (true) {
-    let y = 20;
-    var z = 30;
-    console.log(x + y + z);
-}
-console.log(x + z);
-
-function unless(test, then) {
-    if (!test) then();
+function addAndMultiply(a, b) {
+    return (a + b) * 5;
 }
 
-function repeat(times, body) {
-    for (var i = 0; i < times; i++) body(i);
+console.log(addAndMultiply(5, 7));
+console.log(addAndMultiply(2, 6));
+console.log(addAndMultiply(8, 3));
+
+function lengthChecker(stringToCheck) {
+    if (stringToCheck.length > 10) {
+        return true;
+    } else if (stringToCheck.length <= 10) {
+        return false;
+    } else {
+        console.log("There has been an error!");
+    }
 }
 
-repeat(3, function(n) {
-    unless(n % 2, function() {
-        console.log(n, "is even");
-    });
-});
+console.log(lengthChecker("Read a book."));
+console.log(lengthChecker("There is an urgent need for understanding how climate change will affect our lives."));
+console.log(lengthChecker("My daughter passed in 2014"));
+
+
+
+function arrayChecker(arrayToCheck) {
+    for (var index = 0; index < arrayToCheck.length; index++) {
+        if (arrayToCheck[index].startsWith("ph")) {
+            return arrayToCheck[index];
+        }
+    }
+    console.log("No string starts with ph!");
+}
+
+console.log(arrayChecker(["phone, cellphone"]));
+console.log(arrayChecker(["blah, talking"]));
+console.log(arrayChecker(["cellphone, blah, phone"]));
